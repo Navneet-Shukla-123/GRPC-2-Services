@@ -18,6 +18,8 @@ func (s myComputeServer) Square(ctx context.Context, req *compute.RequestBody) (
 
 	requestData := req.GetX()
 
+	log.Println("Number received from client to server is ", requestData)
+
 	newdata := requestData * requestData
 
 	return &compute.ResponseBody{
@@ -29,6 +31,8 @@ func (s myComputeServer) Square(ctx context.Context, req *compute.RequestBody) (
 // Cube will compute the cube of the request
 func (s myComputeServer) Cube(ctx context.Context, req *compute.RequestBody) (*compute.ResponseBody, error) {
 	requestData := req.GetX()
+
+	log.Println("Number received from client to server is ",requestData)
 
 	newData := requestData * requestData * requestData
 	return &compute.ResponseBody{
