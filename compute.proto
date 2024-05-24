@@ -1,0 +1,17 @@
+syntax="proto3";
+package compute;
+option go_package="compute/";
+
+message RequestBody{
+    int32 x=1;
+}
+
+message ResponseBody{
+    int64 x=1;
+}
+
+service Compute{
+    rpc Square(RequestBody) returns (ResponseBody);
+    rpc Cube(RequestBody) returns (ResponseBody);
+}
+
